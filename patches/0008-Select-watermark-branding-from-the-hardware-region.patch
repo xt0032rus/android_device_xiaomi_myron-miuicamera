@@ -7,15 +7,15 @@ Select the watermark model from the hardware region, falling back to
 mod_device when the region is unavailable.
 
 ---
-diff --git a/smali_classes3/Je/b.smali b/smali_classes3/Je/b.smali
---- a/smali_classes3/Je/b.smali
-+++ b/smali_classes3/Je/b.smali
-@@ -5672,11 +5672,42 @@
+diff --git a/smali_classes2/Tc/b.smali b/smali_classes2/Tc/b.smali
+--- a/smali_classes2/Tc/b.smali
++++ b/smali_classes2/Tc/b.smali
+@@ -4244,12 +4244,43 @@
      return-object p0
  
-     :cond_24
--    invoke-virtual {p0}, LJe/b;->G()Z
-+    sget-object p0, LJe/c;->n:Ljava/lang/String;
+     :cond_1e
+-    invoke-virtual {p0}, LTc/b;->B()Z
++    sget-object p0, LTc/c;->n:Ljava/lang/String;
 +
 +    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 +
@@ -29,8 +29,8 @@ diff --git a/smali_classes3/Je/b.smali b/smali_classes3/Je/b.smali
  
      move-result p0
  
-     if-nez p0, :cond_25
-+
+     if-nez p0, :cond_1f
+ 
 +    goto :watermark_global
 +
 +    :watermark_region_fallback
@@ -38,7 +38,7 @@ diff --git a/smali_classes3/Je/b.smali b/smali_classes3/Je/b.smali
 +
 +    const-string v3, ""
 +
-+    invoke-static {p0, v3}, Lur/g;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
++    invoke-static {p0, v3}, LIh/g;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 +
 +    move-result-object p0
 +
@@ -48,11 +48,13 @@ diff --git a/smali_classes3/Je/b.smali b/smali_classes3/Je/b.smali
 +
 +    move-result p0
 +
-+    if-eqz p0, :cond_25
++    if-eqz p0, :cond_1f
 +
 +    :watermark_global
- 
++
      invoke-virtual {v6, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
  
+     move-result-object p0
+
 -- 
 2.43.0
