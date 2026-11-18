@@ -3,6 +3,7 @@ cc_binary {
     vendor: true,
     relative_install_path: "hw",
     init_rc: ["vendor.xiaomi.hardware.misys-service.rc"],
+    vintf_fragments: ["vendor.xiaomi.hardware.misys.common.xml"],
     srcs: [
         "main.cpp",
         "MiSysImpl.cpp",
